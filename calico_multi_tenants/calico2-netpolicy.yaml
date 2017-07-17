@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: NetworkPolicy
+metadata:
+ name: calico2-network-policy
+ namespace: ns-calico2
+spec:
+ podSelector:
+  matchLabels:
+    user: calico2
+ ingress:
+  - from:
+     - namespaceSelector:
+        matchLabels:
+         user: calico2
+     - podSelector:
+        matchLabels:
+         user: calico2
