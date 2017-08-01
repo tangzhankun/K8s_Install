@@ -6,7 +6,6 @@
   --kubernetes-namespace ns-calico1 \
   --conf spark.executor.instances=5 \
   --conf spark.app.name=GroupByTest \
-  --conf spark.executor.instances=3 \
   --conf spark.executor.cores=4 \
   --conf spark.executor.memory=16g \
   --conf spark.executorEnv.user=calico1 \
