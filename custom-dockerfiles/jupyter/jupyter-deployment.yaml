@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jupyter
+  namespace: default
+  labels:
+    spark-app: jupyter
+spec:
+  containers:
+  - name: jupyter
+    image: 172.16.3.78:4000/spark-jupyter:wip
+    imagePullPolicy: Always
+    ports:
+    - containerPort: 5000
+  restartPolicy: Never
