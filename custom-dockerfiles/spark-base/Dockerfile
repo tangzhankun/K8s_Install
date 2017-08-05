@@ -14,19 +14,7 @@
 # limitations under the License.
 #
 
-FROM krallin/centos-tini
-
-# If this docker file is being used in the context of building your images from a Spark distribution, the docker build
-# command should be invoked from the top level directory of the Spark distribution. E.g.:
-# docker build -t spark-base:latest -f dockerfiles/spark-base/Dockerfile .
-
-ENV JAVA_HOME /usr/java/default
-ENV JAVA_VERSION 8u131
-
-# - install java8 jdk
-COPY jdk-8u131-linux-x64.rpm /tmp/jdk-8u131-linux-x64.rpm
-RUN yum localinstall -y "/tmp/jdk-${JAVA_VERSION}-linux-x64.rpm" && \
-    rm -f "/tmp/jdk-${JAVA_VERSION}-linux-x64.rpm"
+FROM openjdk:tzk
 
 RUN mkdir -p /opt/spark && \
     touch /opt/spark/RELEASE

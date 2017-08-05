@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-FROM spark-base
+FROM spark-base:wip
 
 # If this docker file is being used in the context of building your images from a Spark distribution, the docker build
 # command should be invoked from the top level directory of the Spark distribution. E.g.:
@@ -24,11 +24,11 @@ FROM spark-base
 ADD examples /opt/spark/examples
 ADD python /opt/spark/python
 
-RUN apk add --no-cache python && \
-    python -m ensurepip && \
-    rm -r /usr/lib/python*/ensurepip && \
-    pip install --upgrade pip setuptools && \
-    rm -r /root/.cache
+# - install python
+#COPY python-2.7.5-48.el7.x86_64.rpm /tmp/python-2.7.5-48.el7.x86_64.rpm
+#RUN yum localinstall -y "/tmp/python-2.7.5-48.el7.x86_64.rpm" && \
+#    rm -f "/tmp/python-2.7.5-48.el7.x86_64.rpm"
+
 # UNCOMMENT THE FOLLOWING TO START PIP INSTALLING PYTHON PACKAGES
 # RUN apk add --update alpine-sdk python-dev
 # RUN pip install numpy
