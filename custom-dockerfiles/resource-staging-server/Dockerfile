@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-FROM spark-base
+FROM spark-base:wip
 
 
 # If this docker file is being used in the context of building your images from a Spark distribution, the docker build

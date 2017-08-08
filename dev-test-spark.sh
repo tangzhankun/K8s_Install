@@ -18,4 +18,4 @@
   --conf spark.kubernetes.driver.labels="user=calico1" \
   --conf spark.kubernetes.executor.labels="user=calico1" \
   --conf spark.kubernetes.docker.image.pullPolicy="Always" \
-  local:///opt/spark/examples/jars/spark-examples_2.11-2.1.0-k8s-0.3.0-SNAPSHOT.jar 10 160000 4000
+  local:///opt/spark/examples/jars/spark-examples_2.11-2.1.0-k8s-0.3.0-SNAPSHOT.jar 10 20000 4000

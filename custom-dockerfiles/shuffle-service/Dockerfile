@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-FROM spark-base
+FROM spark-base:wip
 
 # If this docker file is being used in the context of building your images from a Spark distribution, the docker build
 # command should be invoked from the top level directory of the Spark distribution. E.g.:
