@@ -1,2 +1,3 @@
 #!/bin/bash
-nohup ./jstack.sh GroupByTest &
+processName=${1:-GroupByTest}
+nohup ./jstack.sh $processName &
